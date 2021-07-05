@@ -514,24 +514,21 @@
             padding: 0 .5em .5em 0;
             border-bottom: none;
         }
-        
+
         #skills .item {
             width: 32%;
         }
-        
-        #skills .itemlong {
+
+        .itemlong {
             width: 50%;
         }
-        
-        #skills .item .keywords {
-            width: 15em;
-        }
+
         /* Skill chart */
-        
+
         .level {
             margin-bottom: .5em;
         }
-        
+
         .level .bar {
             border: 1px solid #ddd;
             display: block;
@@ -539,7 +536,7 @@
             height: 5px;
             position: relative;
         }
-        
+
         .level .bar::after {
             position: absolute;
             content: " ";
@@ -548,59 +545,59 @@
             background: black;
             height: 5px;
         }
-        
+
         .level.beginner .bar::after {
             background: #EB5F51;
             width: 2.5em;
         }
-        
+
         .level.intermediate .bar::after {
             background: #ffdf1f;
             width: 5em;
         }
-        
+
         .level.advanced .bar::after,
         .level.fluent .bar::after {
             background: #5CB85C;
             width: 7.5em;
         }
-        
+
         .level.master .bar::after,
         .level.native.speaker .bar::after {
             background: #59C596;
             width: 10em;
         }
-        
+
         #references .item {
             padding-left: .5em;
             border-left: 5px solid #ff6d1f;
         }
-        
+
         .toggle-item {
             visibility: hidden;
         }
         /******************
 *	HELPER CLASSES
 ******************/
-        
+
         .clear::after {
             content: "";
             display: table;
             clear: both;
         }
-        
+
         .display {
             display: block;
             opacity: 1 !important;
         }
-        
+
         .margin1 {
             margin-bottom: .5rem;
         }
         /****************
 *		TABLET
 ****************/
-        
+
         @media screen and (min-width: 602px) {
             #resume {
                 width: 80%;
@@ -610,7 +607,7 @@
         /****************
 *		LAPTOP
 ****************/
-        
+
         @media screen and (min-width: 1025px) {
             li {
                 margin-left: 1.5em;
@@ -676,7 +673,7 @@
                 display: block;
             }
         }
-        
+
         @media print {
             #resume {
                 margin: 0;
@@ -790,12 +787,12 @@
             </div>
             <div id="contact">
                 <div class="email">
-                    <span class="fa fa-map-marker"></span> San Francisco Bay Area
+                    <span class="fa fa-map-marker"></span>San Francisco Bay Area
                 </div>
 
                 <div class="email">
                     <span class="fa fa-envelope-o"></span>
-                    <a href="mailto:Surat.Das@gmail.com">surat.das@gmail.com</a>
+                    <a href="mailto:surat.das@gmail.com">Surat.Das@gmail.com</a>
                 </div>
                 <div class="phone">
                     <span class="fa fa-mobile"></span>
@@ -811,7 +808,7 @@
                 <div class="item">
                     <div class="username">
                         <span class="fa fa-github github social"></span>
-                        <span class="url">  
+                        <span class="url">
     						          <a target="_blank" href="https://github.com/suratdas">suratdas</a>
     					          </span>
                     </div>
@@ -819,7 +816,7 @@
                 <div class="item">
                     <div class="username">
                         <span class="fa fa-linkedin linkedin social"></span>
-                        <span class="url">  
+                        <span class="url">
     						          <a target="_blank" href="https://www.linkedin.com/in/surat-das-4b62451b">surat.das@gmail.com</a>
     					          </span>
                     </div>
@@ -853,7 +850,7 @@
             <section id="skills">
                 <div class="item">
                     <h3 class="name">
-                        Open Source Contribution
+                        Open Source Contributions
                     </h3>
                     <ul class="keywords">
                         <li><a target="_blank" href="https://suratdas.github.io">https://suratdas.github.io</a></li>
@@ -869,6 +866,7 @@
                         <li>Spring</li>
                         <li>Angular</li>
                         <li>JavaFX</li>
+                        <li>NestJS</li>
                         <li>TestNG</li>
                     </ul>
                 </div>
@@ -877,9 +875,9 @@
                         Backend Automation
                     </h3>
                     <ul class="keywords">
-                        <li>Restful API</li>
+                        <li>rest-assured</li>
                         <li>JDBC</li>
-                        <li>Mongo DB</li>
+                        <li>Mongo db driver</li>
                     </ul>
                 </div>
             </section>
@@ -894,7 +892,7 @@
                         <li>XCUITest with fastlane</li>
                         <li>Appium</li>
                         <li>WinAppDriver</li>
-                        <li>Galen</li>
+                        <li>Visual Regression</li>
                     </ul>
                 </div>
                 <div class="item">
@@ -919,8 +917,8 @@
                         <li>Git</li>
                         <li>Fiddler</li>
                         <li>Docker</li>
-                        <li>Sonar</li>
                         <li>Jacoco code coverage</li>
+                        <li>Sonar</li>
                         <li>nyc Angular code coverage</li>
                     </ul>
                 </div>
@@ -933,24 +931,24 @@
             <section id="skills">
                 <div class="itemlong">
                     <h3 class="name">
-                        UI based
+                        UI based (Angular, JavaFX)
                     </h3>
                     <ul>
-                        <li>Angular website for non-coder to write executable automated tests</li>
+                        <li>Website for non-coder to write executable tests</li>
                         <li>Real time execution status dashboard (used web sockets)</li>
                         <li>FitNesse and Selenium grid controller UI</li>
-                        <li>Automated visual UI regression and mask geneartion system</li>
+                        <li>Automated visual regression and mask generation system</li>
                     </ul>
                 </div>
                 <div class="itemlong">
                     <h3 class="name">
-                        Non UI based
+                        Non UI based (Spring Boot, NestJS)
                     </h3>
                     <ul>
-                        <li>HTTP mock server with mock backend data to test UI/negative scenario</li>
+                        <li>HTTP server serving mock data to test UI/negative cases</li>
                         <li>Email based task automation/triggering system</li>
-                        <li>OCR based white-labelled app test system</li>
-                        <li>Logo comparison for white level app using API</li>
+                        <li>OCR based white-labelled website/app validation system</li>
+                        <li>Logo comparison against a reference using API</li>
                     </ul>
                 </div>
             </section>
@@ -1012,8 +1010,8 @@
             <section id="work">
                 <section class="work-item">
 
-                    <input id="work-item-0" type="checkbox" class="toggle-item" checked="checked" />
-                    <label for="work-item-0"></label>
+                    <input id="work-item-1" type="checkbox" class="toggle-item" checked="checked" />
+                    <label for="work-item-1"></label>
 
                     <header>
                         <div class="position">Sr. SQA Engineer (Development)</div>
@@ -1049,8 +1047,8 @@
             <section id="work">
                 <section class="work-item">
 
-                    <input id="work-item-0" type="checkbox" class="toggle-item" checked="checked" />
-                    <label for="work-item-0"></label>
+                    <input id="work-item-2" type="checkbox" class="toggle-item" checked="checked" />
+                    <label for="work-item-2"></label>
 
                     <header>
                         <div class="position">Architect in Mobile QA</div>
@@ -1089,8 +1087,8 @@
             <section id="work">
                 <section class="work-item">
 
-                    <input id="work-item-0" type="checkbox" class="toggle-item" checked="checked" />
-                    <label for="work-item-0"></label>
+                    <input id="work-item-3" type="checkbox" class="toggle-item" checked="checked" />
+                    <label for="work-item-3"></label>
 
                     <header>
                         <div class="position">QA Lead</div>
@@ -1126,8 +1124,8 @@
             <section id="work">
                 <section class="work-item">
 
-                    <input id="work-item-0" type="checkbox" class="toggle-item" checked="checked" />
-                    <label for="work-item-0"></label>
+                    <input id="work-item-4" type="checkbox" class="toggle-item" checked="checked" />
+                    <label for="work-item-4"></label>
 
                     <header>
                         <div class="position">Software Engineer/Senior Software Engineer</div>
@@ -1202,7 +1200,6 @@
                 <section class="award-item">
                     <input id="award-item-0" type="checkbox" class="toggle-item" checked="checked" />
                     <label for="award-item-0"></label>
-
                     <header>
                         <div class="header-left">
                             <div class="title">
@@ -1223,8 +1220,8 @@
                     </div>
                 </section>
                 <section class="award-item">
-                    <input id="award-item-0" type="checkbox" class="toggle-item" checked="checked" />
-                    <label for="award-item-0"></label>
+                    <input id="award-item-1" type="checkbox" class="toggle-item" checked="checked" />
+                    <label for="award-item-1"></label>
                     <header>
                         <div class="header-left">
                             <div class="title">
@@ -1245,8 +1242,8 @@
                     </div>
                 </section>
                 <section class="award-item">
-                    <input id="award-item-0" type="checkbox" class="toggle-item" checked="checked" />
-                    <label for="award-item-0"></label>
+                    <input id="award-item-2" type="checkbox" class="toggle-item" checked="checked" />
+                    <label for="award-item-2"></label>
                     <header>
                         <div class="header-left">
                             <div class="title">
@@ -1267,12 +1264,12 @@
                     </div>
                 </section>
                 <section class="award-item">
-                    <input id="award-item-0" type="checkbox" class="toggle-item" checked="checked" />
-                    <label for="award-item-0"></label>
+                    <input id="award-item-3" type="checkbox" class="toggle-item" checked="checked" />
+                    <label for="award-item-3"></label>
                     <header>
                         <div class="header-left">
                             <div class="title">
-                                Trail Blazers
+                                Trailblazer
                             </div>
                             <div class="awarder">
                                 Wipro Technologies
