@@ -773,6 +773,85 @@
                 opacity: 1 !important;
             }
         }
+
+
+        /* The actual timeline (the vertical ruler) */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 5px;
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: lightgray;
+            top: 0;
+            bottom: 0;
+            margin-left: 3px;
+        }
+
+        /* Container around content */
+        .timeline-container {
+            padding: 1px 15px 1px 10px;
+            position: relative;
+            background-color: inherit;
+            width: 95%;
+        }
+
+        /* The circles on the timeline */
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            right: -1px;
+            background-color: white;
+            border: 4px solid #FF9F55;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+
+        /* Add arrows to the right container (pointing left) */
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 18px;
+            width: 0;
+            z-index: 1;
+            left: 13px;
+            border: medium solid white;
+            border-width: 7px 7px 7px 0;
+            border-color: transparent gray transparent transparent;
+        }
+
+        /* Fix the circle for containers on the right side */
+        .right::after {
+            left: -5px;
+        }
+
+        /* The actual content */
+        .timeline-content {
+            /*
+            background-color: #f1f8ff;
+            */
+            border-radius: 10px;
+            border:thin solid lightgray;
+            position: relative;
+            padding: 5px 0 0 10px;
+            margin: 0 0 0 10px;
+        }
+        h5 {
+             display: flex;
+             align-items: center;
+        }
+
     </style>
 
 </head>
@@ -827,12 +906,11 @@
         <section class="section main-summary">
             <section id="summary-section">
                 <div>
-                    <p>I help achieve test, build and process automation for the organization ensuring quality products. This involves architecting and implementing frameworks from scratch and continuously evolve as technology advances. I define, plan, communicate
-                        the automation roadmap and lead executing the plan helping automation adoption by each team. My primary focus areas :
+                    <p>I help achieve test, build and process automation for the organization ensuring quality products. This involves defining and planning the automation roadmap, architecting and implementing frameworks from scratch ensuring automation adoption by each team.
                         <ul style="padding-left: 2em;">
                             <li>Functional and visual UI automation for browser and mobile apps</li>
                             <li>End-to-end test automation covering REST API, database, web and mobile</li>
-                            <li>Setup Jenkins pipeline, integrate automated code coverage system</li>
+                            <li>Setup Jenkins pipeline, integrate code coverage system, integrate service monitoring system</li>
                             <li>Develop various tools (examples in below section) for automation system and infrastructure</li>
                             <li>Define test strategy, test environment setup, requirement and bug management in agile environment</li>
                         </ul>
@@ -844,7 +922,7 @@
         <section class="section margin1">
             <header>
                 <h2 class='section-title'>
-                    <span class="fa fa-server"></span> Skills
+                    <span class="fa fa-gears"></span> Skills
                 </h2>
             </header>
             <section id="skills">
@@ -918,7 +996,7 @@
                         <li>Fiddler</li>
                         <li>Docker</li>
                         <li>Jacoco code coverage</li>
-                        <li>Sonar</li>
+                        <li>Elastic Stack</li>
                         <li>nyc Angular code coverage</li>
                     </ul>
                 </div>
@@ -936,7 +1014,7 @@
                     <ul>
                         <li>Website for non-coder to write executable tests</li>
                         <li>Real time execution status dashboard (used web sockets)</li>
-                        <li>FitNesse and Selenium grid controller UI</li>
+                        <li>FitNesse and Selenium grid controller</li>
                         <li>Automated visual regression and mask generation system</li>
                     </ul>
                 </div>
@@ -952,9 +1030,86 @@
                     </ul>
                 </div>
             </section>
-
         </section>
-        <section class="section">
+        <section class="section margin1">
+            <header>
+                <h2 class='section-title'><span class="fa fa-link"></span>Features Integrated</h2>
+            </header>
+            <section id="tools">
+                <div>
+                    <ul>
+                        <li>Integrated code coverage for Java (using Jacoco) and Angular (using nyc).</li>
+                        <li>Used Elastic stack (Elasticsearch, Kibana, Beats) to monitor and track usage for automation machines and services.</li>
+                        <li>Setup docker based device emulators to run mobile tests, web automation grid with live execution and video recording.</li>
+                        <li>Host, maintain and create Jenkins jobs for automation, also modified Jenkins plugin for our needs.</li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+        <section class="section margin1">
+            <header>
+                <h2 class='section-title'><span class="fa fa-trophy"></span>Chronology And Awards</h2>
+            </header>
+            <section id="skills">
+                <div class="itemlong">
+                    <div class="timeline">
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5><img style="width: 12%;" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Fiserv_logo.svg">&nbsp; 2018 - Present</h5>
+                                <p>Fiserv Solutions LLC (acquired from Ondot Systems)<br>Automation Architect</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content" style="background-color: #f3f0f0;">
+                                <h5><img style="width: 20%;" src="https://www.veritas.com/content/dam/Veritas/images/thread-homepage/vtas.png">&nbsp; 2014 - 2017</h5>
+                                <p>Veritas Technologies LLC (split from Symantec)<br>Sr. SQA Engineer (Development)</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5><img style="width: 10%;" src="https://www.wipro.com/content/dam/nexus/images/header/wipro-logo.png">&nbsp; 2002 - 2014</h5>
+                                <p>Wipro Technologies<br>Architect</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content" style="background-color: #f3f0f0;">
+                                <h5><span class="fa fa-graduation-cap" style="color: #ff6d1f; font-size: medium;"></span>&nbsp; 2001</h5>
+                                <p>Bachelor of Engineering <br>Regional Engineering College, Silchar, India (Now NIT)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="itemlong">
+                    <div class="timeline">
+                        <div class="timeline-container right">
+                            <div class="timeline-content" style="background-color: #f3f0f0;">
+                                <h5><span class="fa fa-trophy" style="color: #ff6d1f;  font-size: medium;"></span>2016 - Innovation (for 2015) | Veritas</h5>
+                                <p>For implementing test automation for Windows app and architecting web automation</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5><span class="fa fa-trophy" style="color: #ff6d1f; font-size: medium;"></span>2014 - The Harbinger | Wipro Technologies</h5>
+                                <p>For contribution and technical leadership in automation and test tool development</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content" style="background-color: #f3f0f0;">
+                                <h5><span class="fa fa-trophy" style="color: #ff6d1f; font-size: medium;"></span>2009 - Feather in My Cap | Wipro Technologies</h5>
+                                <p>For outstanding contribution and automation implementation resulting in customer satisfaction rating of 7/7</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5><span class="fa fa-trophy" style="color: #ff6d1f; font-size: medium;"></span>2007 - Trailblazer | Wipro Technologies</h5>
+                                <p>For best project delivery in product engineering solutions business unit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="section  print-page">
             <header>
                 <h2 class='section-title'>
                     <span class="fa fa-briefcase"></span>Work Experience</h2>
@@ -967,7 +1122,7 @@
 
                     <header>
                         <div class="position">Automation Architect</div>
-                        <div class="company"><img style="width: 4%;" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Fiserv_logo.svg" alt=""> | Fiserv Solutions LLC (acquired from Ondot Systems Inc.)</div>
+                        <div class="company">Fiserv Solutions LLC (acquired from Ondot Systems Inc.)</div>
                         <div class="date">
                             <span class="startDate">March 2018</span>
                             <span class="endDate"> - Present</span>
@@ -975,34 +1130,18 @@
                     </header>
                     <div class="item" id="work-item">
                         <div class="summary">
-                            <p>
-                                <p>Owned, architected and led test automation for API, mobile apps and web test automation for various products. Architected and implemented various servers/tools and deployed them to be used by other teams to write their
-                                    own executable tests without coding.</p>
-                            </p>
+                            <p>Owned, architected and led test automation for API, mobile apps and web test automation for various products. Architected and implemented various servers/tools and deployed them to be used by other teams to write their
+                                own executable tests without coding.</p>
                         </div>
                         <ul class="highlights">
-                            <li>
-                                <p></p>Architected and led mobile UI functional and visual test automation framework showing complete UI flow in the report for iOS and Android devices. It also shows visual regression on various screen sizes for iOS and Android
-                                mobile apps</p>
-                            </li>
-                            <li>
-                                <p>Developed spring based mock API server and screen comparison server</p>
-                            </li>
-                            <li>
-                                <p>Architected and led REST API test automation framework, implemented keyword-based frameworks for dynamic generation of user scenario</p>
-                            </li>
-                            <li>
-                                <p>Developed Angular based website which helps non-coder to write executable test and to perform useful day to day task related to automation</p>
-                            </li>
-                            <li>
-                                <p>Architected and led infrastructure management for web and Android automation using docker</p>
-                            </li>
-                            <li>
-                                <p>Integrated the automation framework with Jenkins using pipeline</p>
-                            </li>
-                            <li>
-                                <p>Setup and integrated code coverage for Java and Angular framework</p>
-                            </li>
+                            <li>Architected and led mobile UI functional and visual test automation framework showing complete UI flow in the report for iOS and Android devices. It also shows visual regression on various screen sizes for iOS and Android
+                                mobile apps</li>
+                            <li>Developed spring based mock API server and screen comparison server</li>
+                            <li>Architected and led REST API test automation framework, implemented keyword-based frameworks for dynamic generation of user scenario</li>
+                            <li>Developed Angular based website which helps non-coder to write executable test and to perform useful day to day task related to automation</li>
+                            <li>Architected and led infrastructure management for web and Android automation using docker</li>
+                            <li>Integrated the automation framework with Jenkins using pipeline</li>
+                            <li>Setup and integrated code coverage for Java and Angular framework</li>
                         </ul>
                     </div>
                 </section>
@@ -1015,7 +1154,7 @@
 
                     <header>
                         <div class="position">Sr. SQA Engineer (Development)</div>
-                        <div class="company"><img style="width: 8%;" src="https://www.veritas.com/content/dam/Veritas/images/thread-homepage/vtas.png" alt=""> | Veritas Technologies LLC (split from Symantec Corporation)</div>
+                        <div class="company">Veritas Technologies LLC (split from Symantec Corporation)</div>
                         <div class="date">
                             <span class="startDate">2014</span>
                             <span class="endDate"> - 2017</span>
@@ -1023,23 +1162,13 @@
                     </header>
                     <div class="item" id="work-item">
                         <div class="summary">
-                            <p>
-                                <p>Worked on a cloud-based archiving and discovery solution for enterprises. Access, management and discovery of archived data is via web interface.</p>
-                            </p>
+                            <p>Worked on a cloud-based archiving and discovery solution for enterprises. Access, management and discovery of archived data is via web interface.</p>
                         </div>
                         <ul class="highlights">
-                            <li>
-                                <p>Architected and led test automation - web (Selenium), iOS/Android (Appium), Windows app (WinAppDriver)</p>
-                            </li>
-                            <li>
-                                <p>Developed various tools for the department which aided various task automation and improved productivity and test coverage</p>
-                            </li>
-                            <li>
-                                <p>Set up Jenkins to run and report automated test results. Also, introduced and implemented docker based solution for automation infrastructure management</p>
-                            </li>
-                            <li>
-                                <p>As scrum master, led the agile efforts in the team</p>
-                            </li>
+                            <li>Architected and led test automation - web (Selenium), iOS/Android (Appium), Windows app (WinAppDriver)</li>
+                            <li>Developed various tools for the department which aided various task automation and improved productivity and test coverage</li>
+                            <li>Set up Jenkins to run and report automated test results. Also, introduced and implemented docker based solution for automation infrastructure management</li>
+                            <li>As scrum master, led the agile efforts in the team</li>
                         </ul>
                     </div>
                 </section>
@@ -1052,7 +1181,7 @@
 
                     <header>
                         <div class="position">Architect in Mobile QA</div>
-                        <div class="company"><img style="width: 3%;" src="https://www.wipro.com/content/dam/nexus/images/header/wipro-logo.png" alt=""> | Wipro Technologies</div>
+                        <div class="company">Wipro Technologies</div>
                         <div class="date">
                             <span class="startDate">2012</span>
                             <span class="endDate"> - 2014</span>
@@ -1060,26 +1189,13 @@
                     </header>
                     <div class="item" id="work-item">
                         <div class="summary">
-                            <p>
-                                <p>These were projects for the US major retailers to bring mobile experience to their customers.</p>
-                            </p>
+                            <p>These were projects for the US major retailers to bring mobile experience to their customers.</p>
                         </div>
                         <ul class="highlights">
-                            <li>
-                                <p>Automation of web (desktop/mobile) and mobile apps with various automation tools</p>
-                            </li>
-                            <li>
-                                <p>Backend automation for REST request, SQL queries</p>
-                            </li>
-                            <li>
-                                <p>Test tools developed to minimize repetitive effort for various team activities and test data preparation.</p>
-                            </li>
-                            <li>
-                                <p>Led mobile QA and test automation efforts</p>
-                            </li>
-                            <li>
-                                <p>Customer satisfaction rating of 7/7 is achieved in 2013</p>
-                            </li>
+                            <li>Automation of web (desktop/mobile) and mobile apps with various automation tools</li>
+                            <li>Backend automation for REST request, SQL queries</li>
+                            <li>Test tools developed to minimize repetitive effort for various team activities and test data preparation.</li>
+                            <li>Led mobile QA and test automation efforts resulting in customer satisfaction rating of 7/7 is achieved in 2013</li>
                         </ul>
                     </div>
                 </section>
@@ -1092,7 +1208,7 @@
 
                     <header>
                         <div class="position">QA Lead</div>
-                        <div class="company"><img style="width: 3%;" src="https://www.wipro.com/content/dam/nexus/images/header/wipro-logo.png" alt=""> | Wipro Technologies</div>
+                        <div class="company">Wipro Technologies</div>
                         <div class="date">
                             <span class="startDate">2006</span>
                             <span class="endDate"> - 2012</span>
@@ -1100,23 +1216,13 @@
                     </header>
                     <div class="item" id="work-item">
                         <div class="summary">
-                            <p>
-                                <p>System tests and test automation for applications on Android, Windows, Blackberry and proprietary OS for various mobile manufacturers and operators</p>
-                            </p>
+                            <p>System tests and test automation for applications on Android, Windows, Blackberry and proprietary OS for various mobile manufacturers and operators</p>
                         </div>
                         <ul class="highlights">
-                            <li>
-                                <p>Analyzing and post processing of GSM/GPRS, UMTS network logs for message flows thereby isolating the deeply embedded flaws which would otherwise would have resulted poor voice quality and low data transfer rate</p>
-                            </li>
-                            <li>
-                                <p>Customer interface and coordinating activities in the project which includes task allocation, planning and estimation, scheduling, bug tracking, delivery and people management</p>
-                            </li>
-                            <li>
-                                <p>System and non-functional test plan and execution for native applications on the phone</p>
-                            </li>
-                            <li>
-                                <p>Test automation of the system test cases</p>
-                            </li>
+                            <li>Analyzing and post processing of GSM/GPRS, UMTS network logs for message flows thereby isolating the deeply embedded flaws which would otherwise would have resulted poor voice quality and low data transfer rate</li>
+                            <li>Customer interface and coordinating activities in the project which includes task allocation, planning and estimation, scheduling, bug tracking, delivery and people management</li>
+                            <li>System and non-functional test plan and execution for native applications on the phone</li>
+                            <li>Test automation of the system test cases</li>
                         </ul>
                     </div>
                 </section>
@@ -1129,7 +1235,7 @@
 
                     <header>
                         <div class="position">Software Engineer/Senior Software Engineer</div>
-                        <div class="company"><img style="width: 3%;" src="https://www.wipro.com/content/dam/nexus/images/header/wipro-logo.png" alt=""> | Wipro Technologies</div>
+                        <div class="company">Wipro Technologies</div>
                         <div class="date">
                             <span class="startDate">2002</span>
                             <span class="endDate"> - 2006</span>
@@ -1137,152 +1243,13 @@
                     </header>
                     <div class="item" id="work-item">
                         <div class="summary">
-                            <p>
-                                <p>Working on PC Software, phone prototype and cell network (real and simulated) interactions for various phone manufacturers and network operators.</p>
-                            </p>
-                        </div>
+                            <p>Working on PC Software, phone prototype and cell network (real and simulated) interactions for various phone manufacturers and network operators.</p>                        </div>
                         <ul class="highlights">
-                            <li>
-                                <p>Setup SyncML Servers with network simulators. Execute AT commands and analyze the logs for OBEX and SyncML interactions between phone and application/server</p>
-                            </li>
-                            <li>
-                                <p>Test different SDK behavior for different emulators as well as phones for different JAD and JAR files</p>
-                            </li>
-                            <li>
-                                <p>Stress, interaction and negative scenarios, reliability, volume, low battery and low memory level validation</p>
-                            </li>
-                            <li>
-                                <p>Requirement analysis, developing Coverage matrix, create test plan, develop use cases and executing them</p>
-                            </li>
-                            <li>
-                                <p>Coordination and managing Problems with third party vendors of the client</p>
-                            </li>
-                            <li>
-                                <p>Awarded “Thanks a Zillion” for contributing to the project</p>
-                            </li>
+                            <li>Setup SyncML Servers with network simulators. Execute AT commands and analyze the logs for OBEX and SyncML interactions between phone and application/server</li>
+                            <li>Stress, interaction and negative scenarios, reliability, volume, low battery and low memory level validation</li>
+                            <li>Requirement analysis, developing Coverage matrix, create test plan, develop use cases and executing them</li>
+                            <li>Coordination and managing Problems with third party vendors of the client</li>
                         </ul>
-                    </div>
-                </section>
-            </section>
-        </section>
-        <section class="section">
-            <header>
-                <h2 class='section-title'><span class="fa fa-graduation-cap"></span>Education</h2>
-            </header>
-            <section id="education">
-                <section class="education-item">
-                    <header>
-                        <div class="header-left">
-                            <div class="studyType">
-                                Bachelor of Engineering
-                            </div>
-                            <div class="area">
-                            </div>
-                            <div class="institution">
-                                Regional Engineering College, Silchar, India (Now NIT, Silchar) </div>
-                        </div>
-                        <div class="date">
-                            Graduated in 2001
-                        </div>
-                    </header>
-                    <ul class="courses">
-                        <li>Electronics and Telecommunication Engineering</li>
-                    </ul>
-
-                </section>
-            </section>
-        </section>
-        <section class="section print-page">
-            <header>
-                <h2 class='section-title'><span class="fa fa-trophy"></span>Awards</h2>
-            </header>
-            <section id="awards">
-                <section class="award-item">
-                    <input id="award-item-0" type="checkbox" class="toggle-item" checked="checked" />
-                    <label for="award-item-0"></label>
-                    <header>
-                        <div class="header-left">
-                            <div class="title">
-                                Innovation (for the year 2015)
-                            </div>
-                            <div class="awarder">
-                                Veritas Technologies LLC
-                            </div>
-                        </div>
-                        <div class="date">2016</div>
-                    </header>
-                    <div class="item">
-                        <div class="summary">
-                            <p>
-                                <p>For implementing test automation for Windows app and architecting web automation</p>
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                <section class="award-item">
-                    <input id="award-item-1" type="checkbox" class="toggle-item" checked="checked" />
-                    <label for="award-item-1"></label>
-                    <header>
-                        <div class="header-left">
-                            <div class="title">
-                                The Harbinger
-                            </div>
-                            <div class="awarder">
-                                Wipro Technologies
-                            </div>
-                        </div>
-                        <div class="date">2014</div>
-                    </header>
-                    <div class="item">
-                        <div class="summary">
-                            <p>
-                                <p>For contribution and technical leadership in automation and test tool development</p>
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                <section class="award-item">
-                    <input id="award-item-2" type="checkbox" class="toggle-item" checked="checked" />
-                    <label for="award-item-2"></label>
-                    <header>
-                        <div class="header-left">
-                            <div class="title">
-                                Feather in My Cap
-                            </div>
-                            <div class="awarder">
-                                Wipro Technologies
-                            </div>
-                        </div>
-                        <div class="date">2009</div>
-                    </header>
-                    <div class="item">
-                        <div class="summary">
-                            <p>
-                                <p>For outstanding contribution and automation implementation resulting in customer satisfaction rating of 7/7</p>
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                <section class="award-item">
-                    <input id="award-item-3" type="checkbox" class="toggle-item" checked="checked" />
-                    <label for="award-item-3"></label>
-                    <header>
-                        <div class="header-left">
-                            <div class="title">
-                                Trailblazer
-                            </div>
-                            <div class="awarder">
-                                Wipro Technologies
-                            </div>
-                        </div>
-                        <div class="date">2007</div>
-                    </header>
-                    <div class="item">
-                        <div class="summary">
-                            <p>
-                                <p>For best project delivery in product engineering solutions business unit</p>
-                            </p>
-                        </div>
                     </div>
                 </section>
             </section>
